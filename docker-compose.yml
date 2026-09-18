@@ -9,6 +9,7 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d docdoc"]
@@ -18,6 +19,7 @@ services:
 
   backend:
     build: .
+
     ports:
       - "8080:8080"
 
