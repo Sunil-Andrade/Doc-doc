@@ -1,4 +1,4 @@
-package main
+package db
 
 import (
 	"context"
@@ -8,7 +8,7 @@ import (
 	"github.com/jackc/pgx/v5"
 )
 
-func connectDB() *pgx.Conn {
+func ConnectDB() *pgx.Conn {
 	databaseURL := os.Getenv("DATABASE_URL")
 
 	if databaseURL == "" {

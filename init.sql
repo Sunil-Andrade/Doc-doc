@@ -1,8 +1,6 @@
-CREATE TABLE IF NOT EXISTS operations (
+CREATE TABLE IF NOT EXISTS documents (
     id BIGSERIAL PRIMARY KEY,
-    client_id TEXT NOT NULL,
-    operation_type TEXT NOT NULL,
-    text TEXT NOT NULL,
-    sequence BIGINT NOT NULL,
+    code VARCHAR(6) UNIQUE NOT NULL,
+    file_path TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
